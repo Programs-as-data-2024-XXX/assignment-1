@@ -65,8 +65,8 @@ let rec eval2 e (env : (string * int) list) : int =
     | CstI i            -> i
     | Var x             -> lookup env x 
     | Prim(ope, e1, e2) ->
-      let i1 = eval e1 env
-      let i2 = eval e2 env
+      let i1 = eval2 e1 env
+      let i2 = eval2 e2 env
       match ope with
         | "+" -> i1 + i2
         | "*" -> i1 * i2
@@ -75,7 +75,7 @@ let rec eval2 e (env : (string * int) list) : int =
         | "min" -> min i1 i2
         | "==" -> equals i1 i2
         | _ -> failwith "unknown primitive"
-    | If(e1, e2, e3) -> exprIf (eval e1 env) (eval e2 env) (eval e3 env)
+    | If(e1, e2, e3) -> exprIf (eval2 e1 env) (eval2 e2 env) (eval2 e3 env);;
 
 let e1v  = eval e1 env;;
 let e2v1 = eval e2 env;;
@@ -90,7 +90,7 @@ type aexpr =
   | Var of string
   | Add of aexpr * aexpr
   | Mul of aexpr * aexpr
-  | Sub of aexpr * aexpr
+  | Sub of aexpr * aexpr;;
 
 (* (ii)
     1) Sub(Var "v", Add(Var "w", Var "z"))
@@ -105,7 +105,7 @@ let rec fmt a  =
     | Var x             -> x
     | Add (a1, a2) -> "(" + (fmt a1) + "+" +  (fmt a2) + ")"
     | Mul (a1, a2) -> "(" + (fmt a1) + "*" +  (fmt a2) + ")"
-    | Sub (a1, a2) -> "(" + (fmt a1) + "-" +  (fmt a2) + ")"
+    | Sub (a1, a2) -> "(" + (fmt a1) + "-" +  (fmt a2) + ")";;
     // Another way to do this would be:
     //| Add (a1, a2) -> sprintf "(%s + %s)" (fmt a1) (fmt a2)
     //| Mul (a1, a2) -> sprintf "(%s * %s)" (fmt a1) (fmt a2)
@@ -122,7 +122,7 @@ let rec simplify a =
     | Mul (a1, CstI 1) -> a1
     | Mul (CstI 0, a1) -> CstI 0
     | Mul (a1, CstI 0) -> CstI 0
-    | _ -> a
+    | _ -> a;;
 
 // (v)
 let rec differentiate a x =
@@ -132,4 +132,4 @@ let rec differentiate a x =
   | Var _ -> CstI 0
   | Add (a1, a2) -> Add (differentiate a1 x, differentiate a2 x)
   | Sub (a1, a2) -> Sub(differentiate a1 x, differentiate a2 x)
-  | Mul (a1, a2) -> Add(Mul(differentiate a1 x, a2), Mul(a1, differentiate a2 x)) 
+  | Mul (a1, a2) -> Add(Mul(differentiate a1 x, a2), Mul(a1, differentiate a2 x));;
