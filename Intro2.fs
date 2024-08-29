@@ -125,10 +125,11 @@ let rec simplify a =
     | _ -> a
 
 // (v)
-let rec differentiate a =
+let rec differentiate a x =
   match a with
   | CstI _ -> CstI 0
-  | Var _ -> CstI 1
+  | Var v when v = x -> CstI 1
+  | Var _ -> CstI 0
   | Add (a1, a2) -> Add (differentiate a1, differentiate a2)
   | Sub (a1, a2) -> Sub(differentiate a1, differentiate a2)
   | Mul (a1, a2) -> Add(Mul(differentiate a1, a2), Mul(a1, differentiate a2)) 
