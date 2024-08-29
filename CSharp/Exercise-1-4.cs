@@ -5,7 +5,7 @@ namespace Exercise14
 {
     public abstract class Expr 
     {
-        public abstract int Eval();
+        public abstract int Eval(Dictionary<string, int> env);
         public abstract string toString();    
     }
 
@@ -18,7 +18,7 @@ namespace Exercise14
             this.value = value;
         }
 
-        public override int Eval() 
+        public override int Eval(Dictionary<string, int> env) 
         {
             return value;
         }
@@ -38,9 +38,9 @@ namespace Exercise14
             this.name = name;
         }
 
-        public override int Eval() 
+        public override int Eval(Dictionary<string, int> env) 
         {
-            return 1;
+            return env[name];
         }
 
         public override string toString() 
@@ -51,7 +51,6 @@ namespace Exercise14
 
     public abstract class Binop : Expr 
     {
-        public string op;
         public Expr e1, e2;
     }
 
@@ -59,19 +58,18 @@ namespace Exercise14
     {
         public Add(Expr e1, Expr e2) 
         {
-            this.op = "+";
             this.e1 = e1;
             this.e2 = e2;
         }
 
-        public override int Eval() 
+        public override int Eval(Dictionary<string, int> env) 
         {
-            return e1.Eval() + e2.Eval();
+            return e1.Eval(env) + e2.Eval(env);
         }
 
         public override string toString() 
         {
-            return e1.toString() + " " + op + " " + e2.toString();
+            return "(" + e1.toString() + " + " + e2.toString() + ")";
         }
     }
 
@@ -79,19 +77,18 @@ namespace Exercise14
     {
         public Sub(Expr e1, Expr e2) 
         {
-            this.op = "-";
             this.e1 = e1;
             this.e2 = e2;
         }
 
-        public override int Eval() 
+        public override int Eval(Dictionary<string, int> env) 
         {
-            return e1.Eval() - e2.Eval();
+            return e1.Eval(env) - e2.Eval(env);
         }
 
         public override string toString() 
         {
-            return e1.toString() + " " + op + " " + e2.toString();
+            return "(" + e1.toString() + " - " + e2.toString() + ")";
         }
     }
 
@@ -99,19 +96,18 @@ namespace Exercise14
     {
         public Mul(Expr e1, Expr e2) 
         {
-            this.op = "*";
             this.e1 = e1;
             this.e2 = e2;
         }
 
-        public override int Eval() 
+        public override int Eval(Dictionary<string, int> env) 
         {
-            return e1.Eval() * e2.Eval();
+            return e1.Eval(env) * e2.Eval(env);
         }
 
         public override string toString() 
         {
-            return e1.toString() + " " + op + " " + e2.toString();
+            return "(" + e1.toString() + " * " + e2.toString() + ")";
         }
     }
 } 
