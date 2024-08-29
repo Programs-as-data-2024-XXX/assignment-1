@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\C#\\C#.csproj",
-      "projectName": "C#",
-      "projectPath": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\C#\\C#.csproj",
+      "projectUniqueName": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
+      "projectName": "assignment1-CSharp",
+      "projectPath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
       "packagesPath": "C:\\Users\\maxbk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\C#\\obj\\",
+      "outputPath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\maxbk\\AppData\\Roaming\\NuGet\\NuGet.Config",

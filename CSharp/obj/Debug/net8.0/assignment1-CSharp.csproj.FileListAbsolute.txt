@@ -1,0 +1,15 @@
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\bin\Debug\net8.0\assignment1-CSharp.exe
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\bin\Debug\net8.0\assignment1-CSharp.deps.json
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\bin\Debug\net8.0\assignment1-CSharp.runtimeconfig.json
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\bin\Debug\net8.0\assignment1-CSharp.dll
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\bin\Debug\net8.0\assignment1-CSharp.pdb
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.AssemblyInfoInputs.cache
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.AssemblyInfo.cs
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.sourcelink.json
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.dll
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\refint\assignment1-CSharp.dll
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.pdb
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\assignment1-CSharp.genruntimeconfig.cache
+C:\Users\maxbk\GitHub\programs-as-data-2024-XXX\assignment-1\CSharp\obj\Debug\net8.0\ref\assignment1-CSharp.dll
