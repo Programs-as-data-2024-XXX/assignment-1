@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GLRAoOv+91F+pDONFlwb5ThHSADEeGvWilQB/c5kppq/IRSBKbwsIEyozLOAfGWjEUL1xVWnI+yt8q+zY2zGSg==",
+  "dgSpecHash": "JKuasJWYk9we/0OzxeVdGvGlhoRr5tBJ9z3YpEajWkkpeO7Gcr5dEP2ccnrA9DfZWd3eYS6ZsFcHJoJU8e3x6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj",
+  "projectFilePath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxbk\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
   ],

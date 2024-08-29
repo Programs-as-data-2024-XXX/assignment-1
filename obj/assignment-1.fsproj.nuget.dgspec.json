@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj": {}
+    "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj": {
+    "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj",
+        "projectUniqueName": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj",
         "projectName": "assignment-1",
-        "projectPath": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj",
+        "projectPath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\assignment-1.fsproj",
         "packagesPath": "C:\\Users\\maxbk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\obj\\",
+        "outputPath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxbk\\AppData\\Roaming\\NuGet\\NuGet.Config",
