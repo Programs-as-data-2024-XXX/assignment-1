@@ -43,6 +43,13 @@ let e2 = Prim("+", CstI 3, Var "a");;
 
 let e3 = Prim("+", Prim("*", Var "b", CstI 9), Var "a");;
 
+(*1.1.2*)
+
+let e4 = Prim("max", CstI 8, CstI 9);;
+let e5 = Prim("min", CstI 8, CstI 9);;
+let e6 = Prim("==", CstI 8, CstI 9);;
+let e7 = Prim("==", CstI 2, CstI 2);;
+
 
 (* Evaluation within an environment *)
 
@@ -81,6 +88,12 @@ let e1v  = eval e1 env;;
 let e2v1 = eval e2 env;;
 let e2v2 = eval e2 [("a", 314)];;
 let e3v  = eval e3 env;;
+
+(*1.1.2 eval*)
+let e4v  = eval e4 env;;
+let e5v  = eval e5 env;;
+let e6v  = eval e6 env;;
+let e7v  = eval e7 env;;
 
 (* Exercise 1.2 *)
 
