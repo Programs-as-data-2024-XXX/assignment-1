@@ -13,21 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
+      "projectUniqueName": "D:\\GitHub\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
       "projectName": "assignment1-CSharp",
-      "projectPath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
+      "projectPath": "D:\\GitHub\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
       "packagesPath": "C:\\Users\\maxbk\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\maxbk\\GitHub\\programs-as-data-2024-XXX\\assignment-1\\CSharp\\obj\\",
+      "outputPath": "D:\\GitHub\\assignment-1\\CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maxbk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\maxbk\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

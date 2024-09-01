@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.Intrinsics.X86;
 
 namespace Exercise14
 {
@@ -7,6 +8,7 @@ namespace Exercise14
     {
         public abstract int Eval(Dictionary<string, int> env);
         public abstract string toString();    
+        public abstract Expr Simplify();
     }
 
     public class CstI : Expr 
@@ -27,6 +29,11 @@ namespace Exercise14
         {
             return value.ToString();
         }
+
+        public override Expr Simplify() 
+        {
+            return this;
+        }
     }
 
     public class Var : Expr 
@@ -46,6 +53,11 @@ namespace Exercise14
         public override string toString() 
         {
             return name;
+        }
+
+        public override Expr Simplify() 
+        {
+            return this;
         }
     }
 
@@ -71,6 +83,23 @@ namespace Exercise14
         {
             return "(" + e1.toString() + " + " + e2.toString() + ")";
         }
+
+        public override Expr Simplify()
+        {
+            Expr se1 = e1.Simplify();
+            Expr se2 = e2.Simplify();  
+
+            if (se1 is CstI && se1.Eval(new Dictionary<string, int>()) == 0)
+            {
+                return se2;
+            }
+            if (se2 is CstI && se2.Eval(new Dictionary<string, int>()) == 0)
+            {
+                return se1;
+            }
+            return new Add(se1, se2);
+            
+        }
     }
 
     public class Sub : Binop 
@@ -90,6 +119,23 @@ namespace Exercise14
         {
             return "(" + e1.toString() + " - " + e2.toString() + ")";
         }
+
+        public override Expr Simplify()
+        {
+            Expr se1 = e1.Simplify();
+            Expr se2 = e2.Simplify();  
+
+            if (se2 is CstI && se2.Eval(new Dictionary<string, int>()) == 0)
+            {
+                return se1;
+            }
+            if (se1.Eval(new Dictionary<string, int>()) == se2.Eval(new Dictionary<string, int>()))
+            {
+                return new CstI(0);
+            }
+            return new Sub(se1, se2);
+            
+        }
     }
 
     public class Mul : Binop 
@@ -108,6 +154,31 @@ namespace Exercise14
         public override string toString() 
         {
             return "(" + e1.toString() + " * " + e2.toString() + ")";
+        }
+
+        public override Expr Simplify()
+        {
+            Expr se1 = e1.Simplify();
+            Expr se2 = e2.Simplify();  
+
+            if (se1 is CstI && se1.Eval(new Dictionary<string, int>()) == 0)
+            {
+                return new CstI(0);
+            }
+            if (se2 is CstI && se2.Eval(new Dictionary<string, int>()) == 0)
+            {
+                return new CstI(0);
+            }
+            if (se1 is CstI && se1.Eval(new Dictionary<string, int>()) == 1)
+            {
+                return se2;
+            }
+            if (se2 is CstI && se2.Eval(new Dictionary<string, int>()) == 1)
+            {
+                return se1;
+            }
+            return new Mul(se1, se2);
+            
         }
     }
 } 

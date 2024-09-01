@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\assignment-1\\CSharp\\assignment1-CSharp.csproj": {}
+    "d:\\GitHub\\assignment-1\\FSharp\\assignment1-FSharp.fsproj": {}
   },
   "projects": {
-    "D:\\GitHub\\assignment-1\\CSharp\\assignment1-CSharp.csproj": {
+    "d:\\GitHub\\assignment-1\\FSharp\\assignment1-FSharp.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
-        "projectName": "assignment1-CSharp",
-        "projectPath": "D:\\GitHub\\assignment-1\\CSharp\\assignment1-CSharp.csproj",
+        "projectUniqueName": "d:\\GitHub\\assignment-1\\FSharp\\assignment1-FSharp.fsproj",
+        "projectName": "assignment1-FSharp",
+        "projectPath": "d:\\GitHub\\assignment-1\\FSharp\\assignment1-FSharp.fsproj",
         "packagesPath": "C:\\Users\\maxbk\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\assignment-1\\CSharp\\obj\\",
+        "outputPath": "d:\\GitHub\\assignment-1\\FSharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\maxbk\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -20,6 +20,7 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\sdk\\8.0.203\\FSharp\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -27,11 +28,6 @@
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
         },
         "restoreAuditProperties": {
           "enableAudit": "true",
@@ -42,6 +38,14 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.200, )",
+              "generatePathProperty": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
