@@ -10,7 +10,7 @@ module Intcomp1
 type expr = 
   | CstI of int
   | Var of string
-  | Let of string * expr * expr
+  | Let of (string * expr) list * expr
   | Prim of string * expr * expr;;
 
 (* Some closed expressions: *)
@@ -49,10 +49,21 @@ let rec eval e (env : (string * int) list) : int =
     match e with
     | CstI i            -> i
     | Var x             -> lookup env x 
+
+    | Let(lst, expression) ->
+      (*let evalExpr = List.map(fun (name, expr) -> (name, eval expr env)) lst 
+      let env1 = List.map(fun (name, int) -> (name, int) :: env) evalExpr*)
+      let env1 = List.fold (fun accEnv (name, expr) -> (name, eval expr accEnv) :: accEnv) env lst
+      eval expression env1
+
+
+    (*
     | Let(x, erhs, ebody) -> 
       let xval = eval erhs env
       let env1 = (x, xval) :: env 
       eval ebody env1
+    *)
+
     | Prim("+", e1, e2) -> eval e1 env + eval e2 env
     | Prim("*", e1, e2) -> eval e1 env * eval e2 env
     | Prim("-", e1, e2) -> eval e1 env - eval e2 env
@@ -212,8 +223,11 @@ let rec freevars e : string list =
     match e with
     | CstI i -> []
     | Var x  -> [x]
-    | Let(x, erhs, ebody) -> 
-          union (freevars erhs, minus (freevars ebody, [x]))
+    
+    | Let (lst, expression) ->
+      List.fold (fun accUnion (name, expr) -> union(accUnion, (union(freevars expr, minus(freevars expression, [name]))))) [] lst
+    (*| Let(x, erhs, ebody) -> 
+          union (freevars erhs, minus (freevars ebody, [x]))*)
     | Prim(ope, e1, e2) -> union (freevars e1, freevars e2);;
 
 (* Alternative definition of closed *)
@@ -246,9 +260,20 @@ let rec tcomp (e : expr) (cenv : string list) : texpr =
     match e with
     | CstI i -> TCstI i
     | Var x  -> TVar (getindex cenv x)
-    | Let(x, erhs, ebody) -> 
+
+    | Let(lst, expression) ->
+      let fstElem = List.head lst
+      let cenv1 = fst fstElem :: cenv 
+      TLet(tcomp (snd fstElem) cenv, tcomp expression cenv1)
+
+      (*let cenv1 = List.fold (fun accEnv (name, _) -> name :: accEnv) cenv lst
+      List.map(fun (name, expr) -> TLet(tcomp expr cenv1, tcomp expression cenv1)) lst
+      List.fold(fun accEnv (name, expr) -> TLet(tcomp expr cenv1, tcomp expression cenv1)) cenv1 lst*)
+
+    (*| Let(x, erhs, ebody) -> 
       let cenv1 = x :: cenv 
       TLet(tcomp erhs cenv, tcomp ebody cenv1)
+      *)
     | Prim(ope, e1, e2) -> TPrim(ope, tcomp e1 cenv, tcomp e2 cenv);;
 
 (* Evaluation of target expressions with variable indexes.  The
