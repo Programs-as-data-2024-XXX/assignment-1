@@ -50,6 +50,7 @@ let e5 = Prim("min", CstI 8, CstI 9);;
 let e6 = Prim("==", CstI 8, CstI 9);;
 let e7 = Prim("==", CstI 2, CstI 2);;
 
+let e8 = If(e6, e4, e5);;
 
 (* Evaluation within an environment *)
 
@@ -66,7 +67,7 @@ let rec eval e (env : (string * int) list) : int =
     | Prim _            -> failwith "unknown primitive"
     | If(e1, e2, e3) -> exprIf (eval e1 env) (eval e2 env) (eval e3 env);;
 
-
+(* 1.1.3 *)
 let rec eval2 e (env : (string * int) list) : int =
     match e with
     | CstI i            -> i
@@ -94,6 +95,9 @@ let e4v  = eval e4 env;;
 let e5v  = eval e5 env;;
 let e6v  = eval e6 env;;
 let e7v  = eval e7 env;;
+
+let e8v= eval e8 env;;
+
 
 (* Exercise 1.2 *)
 
