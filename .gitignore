@@ -400,12 +400,12 @@ FodyWeavers.xsd
 *.sln.iml
 
 ### fsharp ###
-lib/debug
-lib/release
-Debug
-obj
-bin
-/build/
+fsharp/lib/debug
+fsharp/lib/release
+fsharp/Debug
+fsharp/obj
+fsharp/bin
+fsharp/build/
 *.exe
 !.paket/paket.bootstrapper.exe
 .fake
